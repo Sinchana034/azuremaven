@@ -1,31 +1,15 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
   - main
 
 pool:
-  name: Default  # Make sure your self-hosted agent is in this pool
+  name: Default
 
 steps:
-  - checkout: self
-
-  - script: echo Hello, it's my Azure DevOps App!
-    displayName: 'Greet from pipeline'
-
-  - script: |
-      java -version
-      mvn -v
-    displayName: 'Check Java and Maven versions'
+  - script: echo Hello, it's my Azure Devops App
+    displayName: 'Run an echo command'
 
   - script: mvn clean install
-    displayName: 'Build with Maven'
-
-  - script: dir target
-    displayName: 'List files in target folder'
+    displayName: 'Build with maven'
 
   - script: java -jar target/mavenproj-0.0.1-SNAPSHOT.jar
-    displayName: 'Run the built JAR'
-
+    displayName: 'Run a jar file of My HelloMaven App'
