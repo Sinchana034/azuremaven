@@ -17,4 +17,4 @@ steps:
     displayName: 'Build with maven'
 
   - script: java -jar target/mavenproj-0.0.1-SNAPSHOT.jar
-    displayName: 'Run a jar file of My HelloMaven App'
+    displayName: 'Run a jar file of maven proj App'
